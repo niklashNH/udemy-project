@@ -1,0 +1,90 @@
+/*
+Main CSS File
+own classes get aw-prefix
+ */
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Alegreya Sans', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+.aw-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 10px 10px;
+}
+
+.aw-space-between {
+    justify-content: space-between;
+}
+
+.aw-align-center {
+    align-items: center;
+}
+
+header nav {
+    position: fixed;
+    width: 100%;
+    background: rgba(0, 0, 0, .6);
+}
+
+header nav ul.aw-navigation {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style-type: none;
+
+}
+
+header nav ul.aw-navigation li a {
+    display: block;
+    color: #fff;
+    font-size: 16px;
+    text-transform: uppercase;
+    padding: 0 10px
+}
+
+header nav ul.aw-navigation li:last-child a {
+    padding-right: 0;
+}
+
+header nav ul.aw-navigation li a:after {
+    content: '';
+    display: block;
+    height: 1px;
+    width: 0;
+    background-color: #fff;
+    opacity: 0;
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease;
+}
+
+header nav ul.aw-navigation li a:hover:after {
+    width: 100%;
+    opacity: 1;
+}
+
+.aw-logo {
+    display: flex;
+    color: #fff;
+    font-size: 26px;
+    border: solid 2px #fff;
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.aw-main-banner {
+    display: block;
+    width: 100%;
+}
