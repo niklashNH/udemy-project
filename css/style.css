@@ -1,7 +1,16 @@
+/* Fonts */
+
+@import 'fonts.css';
+
 /*
 Main CSS File
 own classes get aw-prefix
  */
+
+* {
+    box-sizing: border-box;
+}
+
 body {
     padding: 0;
     margin: 0;
@@ -12,10 +21,25 @@ a {
     text-decoration: none;
 }
 
+h1,h2,h3,h4,h5,h6 {
+    font-weight: normal;
+}
+
 h1 {
     color: #fff;
     font-size: 66px;
     font-weight: lighter;
+}
+
+h3 {
+    width: 100%;
+    text-align: center;
+    margin-top: 0;
+    font-size: 40px;
+}
+
+h3:first-letter {
+    font-weight: bold;
 }
 
 .aw-container {
@@ -24,9 +48,14 @@ h1 {
     width: 100%;
     max-width: 1000px;
     margin: 0 auto;
-    box-sizing: border-box;
     padding: 10px 10px;
 }
+
+/* Sections */
+.aw-section {
+    padding: 85px 0;
+}
+
 
 .aw-space-between {
     justify-content: space-between;
@@ -35,6 +64,8 @@ h1 {
 .aw-align-center {
     align-items: center;
 }
+
+/* Header Classes */
 
 header {
     position: relative;
@@ -120,6 +151,103 @@ header nav ul.aw-navigation li a:hover:after {
     width: 100%;
 }
 
+/* About us */
+
+#about .aw-column {
+    width: 50%;
+    margin-top: 25px;
+    text-align: center;
+}
+
+#about i {
+    font-size: 45px;
+}
+
+/* Gallery */
+
+#gallery {
+}
+
+#gallery .aw-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#gallery .aw-gallery li {
+    width: 20%;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+#gallery .aw-gallery li img {
+    display: block;
+    width: 100%;
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease;
+}
+
+#gallery .aw-gallery li img:hover {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+}
+
+.aw-gallery li:after {
+    display: block;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .3);
+}
+
+.aw-gallery li:hover:after {
+    width: 0;
+    height: 0;
+}
+
+/* Testimonials */
+
+.aw-testimonials-container ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.aw-testimonial {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.aw-user-data {
+    width: 20%;
+}
+
+.aw-testimonial-text {
+    width: 80%;
+    padding: 10px;
+}
+
+
+.aw-user-data {
+    text-align: center;
+}
+
+.aw-user-data img {
+    border-radius: 50%;
+}
+
+.aw-user-data .aw-user-name {
+    display: block;
+}
+
 /* Animations */
 
 .aw-pulsate {
@@ -127,6 +255,7 @@ header nav ul.aw-navigation li a:hover:after {
     -webkit-animation-iteration-count: infinite;
     opacity: .3;
 }
+
 
 @-webkit-keyframes pulsate {
     0% {opacity: 0.3}
