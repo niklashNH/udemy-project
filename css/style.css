@@ -213,30 +213,46 @@ header nav ul.aw-navigation li a:hover:after {
 
 /* Testimonials */
 
+.aw-testimonials-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+}
+
 .aw-testimonials-container ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
+    display: flex;
+    overflow: hidden;
+}
+
+.aw-testimonials-container ul li{
+    min-width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .aw-testimonial {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    padding: 20px 0;
+    padding: 20px 10px;
 }
 
-.aw-user-data {
-    width: 20%;
-}
 
 .aw-testimonial-text {
     width: 80%;
     padding: 10px;
+    font-style: italic;
 }
 
 
 .aw-user-data {
+    padding: 0 10px
+}
+
+.aw-user-data  {
     text-align: center;
 }
 
@@ -246,6 +262,29 @@ header nav ul.aw-navigation li a:hover:after {
 
 .aw-user-data .aw-user-name {
     display: block;
+}
+
+.aw-testimonials-container .aw-arrow {
+    display: inline-block;
+    border: solid #333;
+    padding: 15px;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+}
+
+.aw-testimonials-container .aw-arrow.aw-arrow-left {
+    -webkit-transform: rotate(135deg);
+    transform: rotate(135deg);
+    left: 10px;
+}
+
+.aw-testimonials-container .aw-arrow.aw-arrow-right {
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    right: 10px;
 }
 
 /* Animations */
