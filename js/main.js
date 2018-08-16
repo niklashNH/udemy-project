@@ -6,10 +6,11 @@
         // adds the menu background if scrolling starts
         const pageWidth = window.innerWidth;
 
-        const bodyOffset = document.body.scrollTop || document.documentElement.scroll;
+        const bodyOffset = document.body.scrollTop || document.documentElement.scrollTop;
         const navigation = document.querySelector("header nav");
 
         if(pageWidth > mobileWidth) {
+			console.log(bodyOffset);
             bodyOffset > 0 ? navigation.classList.add("aw-nav-background") : navigation.classList.remove("aw-nav-background");
         }
 
