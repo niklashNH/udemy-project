@@ -15,6 +15,20 @@
 
     };
 
+    const reOrderResponsiveMenu = () => {
+        const pageWidth = window.innerWidth;
+        const navContainer = document.querySelector("header nav .aw-container");
+        const navigation = document.querySelector("header nav .aw-navigation");
+        const mobileNavigation = document.querySelector("body > .aw-navigation");
+
+        if (pageWidth <= mobileWidth && navigation) {
+            document.body.insertAdjacentElement("afterbegin", navigation);
+        } else if (pageWidth > mobileWidth && mobileNavigation) {
+            navContainer.insertAdjacentElement("beforeend", mobileNavigation);
+        }
+
+    };
+
     const onClickScrollItem = () => {
         // adding Click Listener for all aw-scroll-link element
         const itemlist = document.querySelectorAll(".aw-scroll-link");
@@ -29,7 +43,7 @@
                 scrollToSection(sectionId);
             });
         });
-    }
+    };
 
     const scrollToSection = sectionId => {
         // actually scroll to the supplied section
@@ -52,7 +66,7 @@
             'top': sectionPosition
         })
 
-    }
+    };
 
     const onTestimonialChange = () => {
         let lastChild, firstChild;
@@ -71,13 +85,63 @@
         });
 
 
-    }
+    };
+
+    const onGalleryImageClick = () => {
+        const galleryImageList = document.querySelectorAll(".aw-gallery li");
+        const galleryImages = [...galleryImageList];
+
+        galleryImages.forEach(image => {
+            image.addEventListener("click", event => {
+                galleryImageOpener(event.target);
+            })
+        })
+    };
+
+    const galleryImageOpener = image => {
+        // Opens large version of the image
+        const imageSrc = image.getAttribute("src");
+        const openedImage = `<div class='aw-backdrop'><img src='${imageSrc}' alt=""/>
+                            <span class='aw-backdrop-close'>X</span>
+                            </div>`;
+        document.body.insertAdjacentHTML("beforeend", openedImage);
+        galleryImageClose();
+    };
+
+    const galleryImageClose = () => {
+        // Closes Image Button gallery
+        const closeButton = document.querySelector(".aw-backdrop-close");
+        closeButton.addEventListener("click", () => {
+            const backdrop = document.querySelector(".aw-backdrop");
+            backdrop.remove();
+        })
+    };
+
+    const toggleMobileNav = () => {
+        const pageWidth = window.innerWidth;
+        const navButton = document.querySelector(".aw-nav-toggle");
+
+        navButton.addEventListener("click", () => {
+
+            if (pageWidth <= mobileWidth) {
+                const mobileNav = document.querySelector("body > .aw-navigation");
+                mobileNav.classList.toggle("aw-navigation-opened");
+            }
+        });
+
+    };
 
     window.addEventListener("scroll", () => {
         addMenuBackground();
     });
 
+    window.addEventListener("resize", () => {
+        reOrderResponsiveMenu();
+    })
+
     onClickScrollItem();
     onTestimonialChange();
-
+    onGalleryImageClick();
+    reOrderResponsiveMenu();
+    toggleMobileNav();
 })();

@@ -24,6 +24,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-menu2:before {
+  content: "\e900";
+}
 .icon-profile:before {
   content: "\e923";
 }
@@ -89,4 +92,7 @@
 }
 .icon-html-five2:before {
   content: "\eae5";
+}
+.icon-menu:before {
+  content: "\e9bd";
 }

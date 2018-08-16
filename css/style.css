@@ -119,6 +119,10 @@ header nav ul.aw-navigation li a:hover:after {
     opacity: 1;
 }
 
+header nav .aw-nav-toggle {
+    display: none;
+}
+
 .aw-logo {
     display: flex;
     color: #fff;
@@ -402,6 +406,40 @@ footer .aw-social-icons li a:hover{
 
 }
 
+/* JS Image Backdrop */
+
+.aw-backdrop {
+    position: fixed;
+    display: flex;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+}
+
+.aw-backdrop img {
+    max-width: 80%;
+}
+
+span.aw-backdrop-close {
+    position: absolute;
+    color: #fff;
+    top: 20px;
+    right: 20px;
+    height: 30px;
+    width: 30px;
+    font-size: 20px;
+    border: solid 2px #fff;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
 /* Animations */
 
 .aw-pulsate {
@@ -414,4 +452,100 @@ footer .aw-social-icons li a:hover{
     0% {opacity: 0.3}
     50% {opacity: 1}
     100% {opacity: .3}
+}
+
+/* Responsive */
+
+@media all and (max-width: 1020px) {
+
+}
+
+@media all and (max-width: 820px) {
+
+    h1 {
+        font-size: 50px;
+    }
+
+}
+
+@media all and (max-width: 680px) {
+
+    header nav {
+        position: absolute;
+    }
+
+    ul.aw-navigation {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background: #333;
+        max-height: 0;
+
+        -webkit-transition: max-height .8s ease;
+        transition: max-height .8s ease;
+    }
+
+    ul.aw-navigation.aw-navigation-opened {
+        max-height: 500px;
+    }
+
+    ul.aw-navigation li {
+        padding: 0 15px;
+    }
+
+    ul.aw-navigation li a {
+        display: block;
+        padding: 10px 0;
+        color: #fff;
+        border-bottom: 1px solid #999;
+    }
+
+    ul.aw-navigation li:last-child a{
+        border-bottom: none;
+        padding-bottom: 20px
+    }
+
+    ul.aw-navigation li:first-child a{
+        padding-top: 20px;
+    }
+
+    header nav .aw-nav-toggle {
+        display: block;
+        color: #fff;
+        cursor: pointer;
+        font-size: 25px;
+    }
+
+}
+
+@media all and (max-width: 600px) {
+
+    .aw-logo {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    .aw-header-text .aw-arrow {
+        display: none;
+    }
+
+    #about .aw-column {
+        width: 100%;
+    }
+
+    #gallery .aw-gallery li {
+        width: 33.33%;
+    }
+
+    #contact form input:not([type="submit"]),
+    #contact form textarea, #contact form input[type="submit"] {
+        width: 90%;
+        padding: 10px;
+    }
 }
